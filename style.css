@@ -1,0 +1,124 @@
+/* General Body and Layout Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. CSS Transitions */
+.transition-box {
+    width: 150px;
+    height: 150px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 20px auto;
+    border-radius: 10px;
+    
+    /* The magic happens here: a smooth transition for all properties */
+    transition: width 0.4s ease-in-out, 
+                height 0.4s ease-in-out, 
+                background-color 0.4s ease-in-out;
+}
+
+.transition-box:hover {
+    width: 180px;
+    height: 180px;
+    background-color: #28a745;
+    cursor: pointer;
+}
+
+/* 2. CSS Keyframe Animation */
+.loader-container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    /* Initially, the animation is paused */
+    animation: spin 1.2s linear infinite paused; 
+}
+
+/* Class to start the animation */
+.loader.active {
+    animation-play-state: running;
+}
+
+/* Keyframe definition for the spinning animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 3. JavaScript Functions & DOM Interaction */
+.function-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#number-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+#calculate-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calculate-button:hover {
+    background-color: #0056b3;
+}
+
+#result-output {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
